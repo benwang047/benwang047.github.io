@@ -36,13 +36,13 @@ const formattedDate = formatDate(date);
     <dl
       class="border-line text-ink-soft mt-6 flex flex-wrap gap-x-8 gap-y-2 border-y py-4 font-mono text-xs"
     >
-      <div><dt class="inline">Role —</dt><dd class="inline">{role}</dd></div>
-      <div><dt class="inline">Date —</dt><dd class="inline">{formattedDate}</dd></div>
+      <div><dt class="inline">Role —</dt><dd class="inline ml-1">{role}</dd></div>
+      <div><dt class="inline">Date —</dt><dd class="inline ml-1">{formattedDate}</dd></div>
       {
         tags.length > 0 && (
           <div>
-            <dt class="inline">Focus — </dt>
-            <dd class="inline">{tags.join(', ')}</dd>
+            <dt class="inline">Focus —</dt>
+            <dd class="inline ml-1">{tags.join(', ')}</dd>
           </div>
         )
       }
