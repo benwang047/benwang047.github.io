@@ -20,6 +20,6 @@ const projects = [
  <div class="project-grid">{projects.map(([label,title,summary,slug,tags]) => <article class="project"><span class="kicker">{label}</span><h3><a href={`/work/${slug}`}>{title}</a></h3><p>{summary}</p><p style="font-size:11px">{tags}</p><a class="detail" href={`/work/${slug}`}>View project ↗</a></article>)}</div>
  </section>
  <aside class="band"><h2 class="kicker">Additional research</h2><p>I also contribute hardware and system integration to a confidential robotics automation project. Details and project media are withheld pending public release.</p></aside>
- <section id="contact" class="contact-section"><span class="kicker">Contact</span><h2>Robotics hardware & electromechanical systems.</h2><p class="text-ink-soft">Interested in mechanisms, prototyping, and getting physical systems to work.</p><div class="actions"><a href={`mailto:${SITE.email}`}>{SITE.email}</a><a href="https://www.linkedin.com/in/boyuan-ben-wang/">LinkedIn ↗</a></div></section>
+ <section id="contact" class="contact-section"><h2>Get in touch</h2><div class="actions"><a href={`mailto:${SITE.email}`}>{SITE.email}</a><a href="https://www.linkedin.com/in/boyuan-ben-wang/">LinkedIn ↗</a></div></section>
 </div>
 </BaseLayout>
