@@ -1,26 +1,16 @@
 ---
 title: "Acoustic sensing for automated intubation"
-summary: "Building a repeatable experimental setup for tube\u2013tissue interaction."
+summary: "Studying what sound can tell us about tube–airway contact."
 role: "Project proposer & multidisciplinary team lead"
 date: 2026-05-01
 tags: ["Test systems", "Mechanical design", "Medical robotics"]
 featured: true
 ---
 
-A medical robotics graduate capstone investigating acoustic signals generated as an intubation tube interacts with an anatomical airway phantom.
+This capstone started with a question: could the sounds made by an intubation tube tell us something about its contact with an airway?
 
-## My contribution
+I proposed the project and led three teammates from different backgrounds. My part was mostly the experimental setup: the linear actuator, mechanical supports, bill of materials, and molds for the airway phantoms.
 
-I proposed the project and led three teammates from different backgrounds. My hands-on work centered on the overall system, bill of materials, mechanical supports, linear-actuator testbed, and phantom molds.
+Before we could study the acoustic signals, we needed the tube to move consistently without the mechanism drowning them out. I worked on alignment and stiffness, then added rubber damping and supports that made less contact with the setup. My teammates worked on denoising and learning-based analysis of the recordings.
 
-## Making the experiment usable
-
-The mechanical setup needed to maintain tube alignment and stiffness while limiting vibration from the actuator. I developed supports and isolation features, including rubber damping and minimal-contact support.
-
-## Team work
-
-The broader team worked on acoustic denoising and a learning-based approach to analyze tube–tissue interaction. These were team contributions rather than model-training work I owned individually.
-
-## What worked, and what limited it
-
-The setup addressed alignment and rigidity problems and reduced mechanical noise. Phantom fragility remained a limitation on repeatability, so the system should be presented as an experimental testbed rather than a clinically validated device.
+The setup became more stable and mechanically quieter. The phantoms were still fragile, though, which made repeated trials difficult. This remained a lab testbed; we did not establish clinical performance.
