@@ -1,30 +1,24 @@
 ---
 title: "21-DoF robotic hand"
-summary: "Mechanical architecture and experimental infrastructure for visual self-modeling."
+summary: "Building a robotic hand and helping it estimate its state from images."
 role: "Robot hardware, simulation & control"
 date: 2026-07-01
 tags: ["Mechanisms", "Actuation", "URDF / PyBullet"]
 featured: true
 ---
 
-A 21-DoF robotic hand developed for visual self-modeling research in Duke’s General Robotics Lab. The broader project studies how joint configuration, physical shape, and visual appearance relate, and uses that relationship to estimate robot state from images.
+A 21-DoF hand built for visual self-modeling research at Duke. The project asks how a robot’s joint positions relate to its shape and appearance—and how images can be used to estimate its state.
 
 ![Shadow robotic hand demonstration](/shadow.gif)
 
 *Project media: Duke General Robotics Lab.*
 
-## My contribution
+I worked on the finger mechanisms, palm and joint layout, actuator packaging, and outer geometry. I also built the URDF/PyBullet model and worked on motor control and data logging. On the perception side, I helped deploy the visual inference pipeline and analyze pose coverage.
 
-My work focused on the physical robot and experimental system: finger mechanisms, palm and joint layout, actuator packaging, outer geometry, URDF/PyBullet modeling, motor control, and system integration. I also supported deployment of the visual inference pipeline and analysis of pose coverage.
+The outside of the hand mattered to the experiment. Covering the motors and linkages gave it a more consistent visible shape, so I had to develop the mechanisms and outer surfaces together.
 
-## A design decision
+Getting it moving reliably took some debugging. When motor communication limited the control rate, I tested joint groups separately to find the bottleneck, then reorganized the commands into batch updates.
 
-The external geometry covers the motors and internal linkages. This made the robot’s visual embodiment more consistent for image-based experiments, while requiring the mechanisms and outer surfaces to be developed together.
-
-## A debugging example
-
-A communication bottleneck limited control frequency. I isolated joint groups to locate the constraint and restructured motor commands into batch updates.
-
-## Public work
+## More on the project
 
 [Paper](https://arxiv.org/abs/2607.22434) · [Project](https://generalroboticslab.com/Shadow) · [Code](https://github.com/generalroboticslab/shadow-dance)
