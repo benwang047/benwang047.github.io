@@ -13,7 +13,7 @@ A 21-DoF hand built for visual self-modeling research at Duke. The project asks 
 
 *Project media: Duke General Robotics Lab.*
 
-I worked on the finger mechanisms, palm and joint layout, actuator packaging, and outer geometry. I also built the URDF/PyBullet model and worked on motor control and data logging. On the perception side, I helped deploy the visual inference pipeline and analyze pose coverage.
+I designed the finger mechanisms, palm and joint layout, actuator packaging, and outer geometry. I also built the URDF/PyBullet model and integrated motor control and data logging. On the perception side, I helped deploy the visual inference pipeline and analyze pose coverage.
 
 The outside of the hand mattered to the experiment. Covering the motors and linkages gave it a more consistent visible shape, so I had to develop the mechanisms and outer surfaces together.
 
