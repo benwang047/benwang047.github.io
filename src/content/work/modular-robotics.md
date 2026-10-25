@@ -1,24 +1,16 @@
 ---
 title: "Computational modular robotics"
-summary: "Configuration search grounded in task geometry and mechanical feasibility."
+summary: "Finding robot configurations that can reach the target and carry the load."
 role: "Graduation research: hardware & computational design"
 date: 2026-10-01
 tags: ["Configuration search", "Load analysis", "MuJoCo"]
 featured: true
 ---
 
-This graduation research explores a common set of actuated modules and passive links that can be assembled into task-specific robots.
+I’m exploring how a shared set of actuated modules and passive links could be assembled into robots for different tasks. This is my graduation research.
 
-## My contribution
+I work on both the physical modules—their connections and links—and the simulation workflow that searches for useful configurations. The two inform each other: a promising arrangement in simulation has to be something we can actually build.
 
-I design the module, coupling interface, and links, and develop the simulation and search workflow used to evaluate candidate configurations.
+Reachability alone isn’t enough. The search also checks joint limits, task geometry, payload, motor torque, and loads at the couplers. I’m building those checks into the evaluation so an overloaded design doesn’t look like a good answer just because it reaches the target.
 
-## From task to candidate robot
-
-The search evaluates candidates against reachability, joint limits, task geometry, payload, actuator torque, and coupler loading. Load analysis is part of the search rather than a separate check performed only after a design is selected.
-
-## Current status
-
-Simulation and hardware are being developed together. Physical arm demonstrations are the current priority. A candidate that reaches a target in simulation still needs to satisfy mechanical limits and be validated on the real platform.
-
-Detailed research results and media are reserved for public release.
+The work is ongoing, with physical arm demonstrations next. I’ll share more when the research is public.
