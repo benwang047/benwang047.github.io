@@ -2,22 +2,26 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE } from '@/site.config';
 const projects = [
- ['01 / PUBLIC RESEARCH','21-DoF robotic hand','Mechanical architecture, actuator packaging, simulation, and motor control for visual self-modeling experiments.','shadow-hand','Hardware design · URDF / PyBullet · Control'],
- ['02 / GRADUATION RESEARCH','Computational modular robotics','Searching robot configurations against task geometry and mechanical limits, then taking promising designs toward hardware.','modular-robotics','Configuration search · Load analysis · Coupling'],
- ['03 / MEDICAL ROBOTICS CAPSTONE','Acoustic sensing for intubation','An experimental platform for studying tube–tissue interaction, with a focus on alignment, stiffness, and vibration isolation.','intubation','Experimental design · Fixtures · Team leadership'],
- ['04 / INDUSTRY','Precision manufacturing equipment','Fixtures, printer commissioning, post-processing hardware, and troubleshooting at Trio Labs.','trio-labs','Mechanical design · Bring-up · Validation'],
+ {label:'01 / PUBLIC RESEARCH',title:'21-DoF robotic hand',summary:'A physical platform for visual self-modeling research.',contribution:'I designed the mechanisms and actuator packaging, built the URDF/PyBullet model, and integrated motor control and data logging.',result:'Debugging the communication bottleneck led to batched motor updates.',slug:'shadow-hand',tags:'Mechanisms · Actuation · Simulation · Control',image:'/shadow.gif'},
+ {label:'02 / GRADUATION RESEARCH',title:'Computational modular robotics',summary:'A reconfigurable robot platform evaluated against the task it needs to perform.',contribution:'I develop the module hardware, coupling interface, and configuration-search workflow, with mechanical load analysis built into the evaluation.',result:'In progress: taking promising simulated designs toward physical arm demonstrations.',slug:'modular-robotics',tags:'Mechanical design · Configuration search · MuJoCo'},
+ {label:'03 / MEDICAL ROBOTICS CAPSTONE',title:'Acoustic sensing for intubation',summary:'An experimental testbed for studying tube–tissue interaction through acoustic signals.',contribution:'I proposed the project, led three teammates, and designed the actuator testbed, mechanical supports, and airway-phantom molds.',result:'Improved alignment and rigidity and reduced mechanical noise; phantom fragility limited repeatability.',slug:'intubation',tags:'Experimental systems · Prototyping · Team leadership'},
+ {label:'04 / INDUSTRY',title:'Precision manufacturing equipment',summary:'R&D hardware for precision metal additive manufacturing at Trio Labs.',contribution:'I designed fixtures and post-processing hardware, supported equipment commissioning, and troubleshot mechanical, electrical, and process issues.',result:'Work covered CAD, fabrication, assembly, bring-up, and equipment validation.',slug:'trio-labs',tags:'Mechanical design · Fabrication · Commissioning · Validation'},
 ];
 ---
 <BaseLayout title={SITE.name}>
 <div class="shell">
  <section class="hero">
-  <div><span class="kicker">Robotics hardware / Selected work</span><h1>Designing robots.<br/>Building the hardware.<br/>Making it work.</h1>
-  <p>{SITE.description}</p><div class="actions"><a class="primary" href="#work">Explore my work ↗</a><a href="/about">About me</a></div>
-  <span class="kicker">Duke M.S. · Graduating December 2026</span></div>
-  <figure><img src="/shadow.gif" alt="The Shadow robotic hand demonstrating projected shadow shapes" width="600" height="508"/><figcaption>FIG. 01 — SHADOW / 21-DoF HAND<br/>Project media: Duke General Robotics Lab</figcaption></figure>
+  <p class="kicker">Mechanical design / Electromechanical systems</p>
+  <h1>I design and build machines<br class="desktop-break"/> to solve real problems.</h1>
+  <p class="intro">I’m Ben, a mechanical engineering M.S. student at Duke and a graduate researcher in the General Robotics Lab. I work across mechanisms, prototyping, control integration, and hardware bring-up.</p>
+  <div class="hero-footer"><span class="kicker">Duke M.S. · Graduating December 2026</span><div class="actions"><a class="primary" href="#work">Selected work ↓</a><a href="/about">About me</a><a href="https://www.linkedin.com/in/boyuan-ben-wang/">LinkedIn ↗</a></div></div>
  </section>
- <section id="work"><div class="work-heading"><h2 class="kicker">Selected engineering work</h2><span class="kicker">2025—2026</span></div>
- <div class="project-grid">{projects.map(([label,title,summary,slug,tags]) => <article class="project"><span class="kicker">{label}</span><h3><a href={`/work/${slug}`}>{title}</a></h3><p>{summary}</p><p style="font-size:11px">{tags}</p><a class="detail" href={`/work/${slug}`}>View project ↗</a></article>)}</div>
+ <section id="work" aria-labelledby="selected-work">
+  <div class="work-heading"><h2 id="selected-work" class="kicker">Selected engineering work</h2><span class="kicker">2025—2026</span></div>
+  <div class="project-list">{projects.map((project) => <article class="project-row">
+   <div class="project-side"><span class="kicker">{project.label}</span>{project.image && <figure><a href={`/work/${project.slug}`} aria-label={`View ${project.title}`}><img src={project.image} alt="Shadow robotic hand demonstrating projected shapes" width="250" height="250" loading="lazy"/></a><figcaption>Project media: Duke General Robotics Lab</figcaption></figure>}</div>
+   <div class="project-body"><h3><a href={`/work/${project.slug}`}>{project.title}</a></h3><p class="project-summary">{project.summary}</p><p><strong>My work.</strong> {project.contribution}</p><p class="project-result">{project.result}</p><div class="project-footer"><p class="project-tags">{project.tags}</p><a class="detail" href={`/work/${project.slug}`}>View project ↗</a></div></div>
+  </article>)}</div>
  </section>
  <aside class="band"><h2 class="kicker">Additional research</h2><p>I also contribute hardware and system integration to a confidential robotics automation project. Details and project media are withheld pending public release.</p></aside>
  <section id="contact" class="contact-section"><h2>Get in touch</h2><div class="actions"><a href={`mailto:${SITE.email}`}>{SITE.email}</a><a href="https://www.linkedin.com/in/boyuan-ben-wang/">LinkedIn ↗</a></div></section>
