@@ -13,4 +13,6 @@ I design the modules, coupling interfaces, and links, and develop the simulation
 
 Reachability alone isn’t enough. The search also checks joint limits, task geometry, payload, motor torque, and loads at the couplers. I’m building those checks into the evaluation so an overloaded design doesn’t look like a good answer just because it reaches the target.
 
-The work is ongoing, with physical arm demonstrations next. I’ll share more when the research is public.
+The work is ongoing. The simulation gallery below shows the current arm and walking configurations, along with their limitations and printing estimates. Physical validation is still ahead.
+
+[View the simulation gallery →](/projects/modular-robots/)

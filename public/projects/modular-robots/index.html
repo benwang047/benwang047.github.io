@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modular Robot Designs | Boyuan (Ben) Wang</title>
+<link rel="canonical" href="https://benwang047.github.io/projects/modular-robots/">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Task-Driven Modular Robot Configuration Under Actuator and Coupling Limits: simulated robots built from one module type.">
+<style>
+:root { --bg: #ffffff; --ink: #1d1d1b; --muted: #5b5b57; --card: #f4f6f8; --line: #dfe3e8; --accent: #00539b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #15171a; --ink: #ecebe8; --muted: #a9a8a3; --card: #1f2226; --line: #33373d; --accent: #7fb2e5; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 48px; }
+h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 6px; color: var(--accent); }
+h2 { font-size: 1.25rem; margin: 36px 0 4px; }
+.by { color: var(--muted); margin: 0 0 18px; }
+.lead { font-size: 1.05rem; max-width: 760px; }
+.key { color: var(--muted); max-width: 760px; }
+.section-intro { color: var(--muted); margin: 0 0 14px; max-width: 760px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+figure img { display: block; width: 100%; height: auto; background: #fff; }
+figcaption { padding: 10px 12px 12px; }
+figcaption b { display: block; margin-bottom: 2px; }
+.table-wrap { overflow-x: auto; margin: 0 0 12px; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.95rem; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: var(--card); font-weight: 600; }
+td:nth-child(2), th:nth-child(2) { text-align: right; }
+td:nth-child(n+4) { white-space: nowrap; }
+.notes { color: var(--muted); max-width: 760px; padding-left: 20px; margin: 0; }
+.notes li { margin: 2px 0; }
+footer { margin-top: 40px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 14px; }
+</style>
+</head>
+<body>
+<main>
+<nav style="margin-bottom:24px"><a style="color:var(--accent)" href="/">← Ben Wang’s portfolio</a></nav>
+<h1>Task-Driven Modular Robot Configuration Under Actuator and Coupling Limits</h1>
+<p class="by">Boyuan Wang · Duke University, Mechanical Engineering and Materials Science</p>
+<p class="lead">Every robot here is built from one kind of servo module. For each task, a search picks how many modules to use and how they connect, and designs the 3D-printed links between them, checking motor torque and the strength of the magnetic couplers that join the parts. For a new task the links are reprinted and the modules kept.</p>
+<p class="key">Grey boxes are the modules, blue parts the printed links. All motion is simulated in MuJoCo; none of these robots has been built yet.</p>
+<h2>Arms</h2>
+<p class="section-intro">The same module type, different printed links for each task.</p>
+<div class="grid">
+<figure><img src="gifs/task_open_table_4mod.gif" alt="Table pick and place, simulated" loading="lazy" width="480"><figcaption><b>Table pick and place</b>4 modules, 394 g of printed links. Reaches each task point with the tool, clear of the table.</figcaption></figure>
+<figure><img src="gifs/E00355_6D_SSTST_L90-90-100-130-160-100.gif" alt="Loading a part into a CNC mill, simulated" loading="lazy" width="480"><figcaption><b>Loading a part into a CNC mill</b>6 modules, 579 g. Reaches in through the door to the vise. Its couplers bend to 1.31 times their proof load, so a stronger coupler or a bench test comes first.</figcaption></figure>
+<figure><img src="gifs/writing__GRL_h50.gif" alt="Writing GRL, simulated" loading="lazy" width="480"><figcaption><b>Writing GRL</b>5 modules, 484 g. Letters 50 mm tall.</figcaption></figure>
+<figure><img src="gifs/writing__DUKE_h50.gif" alt="Writing DUKE, simulated" loading="lazy" width="480"><figcaption><b>Writing DUKE</b>The same arm and links as GRL: only the path changes.</figcaption></figure>
+</div>
+<h2>Walkers</h2>
+<p class="section-intro">The same modules again. The end of the last link is the foot. Each servo follows a sine wave tuned in simulation, not a full walking controller.</p>
+<div class="grid">
+<figure><img src="gifs/legcount_search_quadruped_m1.gif" alt="Four legs, one module each, simulated" loading="lazy" width="480"><figcaption><b>Four legs, one module each</b>4 modules, 1,483 mm in 8 s. Walks in 32 of 32 trials with varied friction, servo stiffness, ground tilt and joint errors. The farthest walker.</figcaption></figure>
+<figure><img src="gifs/legcount_search_quadruped_m2.gif" alt="Four legs, two modules each, simulated" loading="lazy" width="480"><figcaption><b>Four legs, two modules each</b>8 modules, 1,349 mm in 8 s. Walks in 32 of 32 trials with varied friction, servo stiffness, ground tilt and joint errors.</figcaption></figure>
+<figure><img src="gifs/legcount_tripod_m2.gif" alt="Three legs, two modules each, simulated" loading="lazy" width="480"><figcaption><b>Three legs, two modules each</b>6 modules, 904 mm in 8 s; 31 of 32 trials.</figcaption></figure>
+<figure><img src="gifs/biped_top2.gif" alt="Two legs, simulated" loading="lazy" width="480"><figcaption><b>Two legs</b>6 modules, 602 mm in 8 s.</figcaption></figure>
+</div>
+<h2>Beyond fixed links</h2>
+<p class="section-intro">Letting the printed parts take any shape cuts the number of modules.</p>
+<div class="grid">
+<figure><img src="gifs/free_table_2mod.gif" alt="Table with 2 modules, simulated" loading="lazy" width="480"><figcaption><b>Table with 2 modules</b>Free struts instead of fixed links: 2 modules and 133 g do the table task that needs 4 modules with fixed links.</figcaption></figure>
+<figure><img src="gifs/free_cnc_3mod.gif" alt="CNC with 3 modules, simulated" loading="lazy" width="480"><figcaption><b>CNC with 3 modules</b>3 modules, 240 g of struts. They bend; stiffened to about 5 mm of deflection they weigh 330 g.</figcaption></figure>
+<figure><img src="gifs/one_dof_walk.gif" alt="One module walking, simulated" loading="lazy" width="480"><figcaption><b>One module walking</b>One module and plain shapes: 1,031 mm in 8 s, but the feet slide 76 % of the way, so it shuffles more than it steps.</figcaption></figure>
+</div>
+<h2>Printing estimates</h2>
+<p class="section-intro">Printer time only: assembly, wiring and fitting the magnets are not included, and no full build has been timed. A new task needs only new links; the modules are reused.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Robot</th><th>Modules</th><th>Printed parts</th><th>Link printing</th><th>PLA, with supports</th><th>From scratch, with modules</th></tr></thead>
+<tbody>
+<tr><td>Table arm</td><td>4</td><td>4 links + 60 mm rod</td><td>about 15 h</td><td>about 310 g</td><td>about 31 h</td></tr>
+<tr><td>Writing arm</td><td>5</td><td>5 links + 130 mm rod</td><td>about 18 h</td><td>about 370 g</td><td>about 38 h</td></tr>
+<tr><td>CNC arm</td><td>6</td><td>6 links</td><td>about 18 h</td><td>about 370 g</td><td>about 42 h</td></tr>
+<tr><td>Four legs, one module each</td><td>4</td><td>4 leg links; torso not included</td><td>about 13 h</td><td>about 270 g</td><td>about 29 h</td></tr>
+<tr><td>Four legs, two modules each</td><td>8</td><td>8 leg links; torso not included</td><td>about 25 h</td><td>about 500 g</td><td>about 57 h</td></tr>
+<tr><td>Three legs, two modules each</td><td>6</td><td>6 leg links; torso not included</td><td>about 19 h</td><td>about 380 g</td><td>about 43 h</td></tr>
+<tr><td>Two legs</td><td>6</td><td>6 leg links; torso not included</td><td>about 19 h</td><td>about 380 g</td><td>about 43 h</td></tr>
+</tbody>
+</table></div>
+<p class="section-intro">Built one by one, these seven robots would need 39 modules, about 156 printer-hours of module parts. One set of 8 modules, the most any of them uses, can become any one of them; after that, each new robot costs only its links.</p>
+<ul class="notes">
+<li>Scaled from one sliced link: a 110 mm link prints in 3 h 1 min with 47.4 g of PLA, 61.2 g with supports.</li>
+<li>A link's volume grows with its length L as 45.3 + 0.148 L cm³, L in mm; most of it is the two couplers. Time and filament are taken in proportion to volume.</li>
+<li>Tool rods are counted as links of their length, so the arm figures run a little high.</li>
+<li>The printed parts of one actuator module take about 4 h.</li>
+<li>Legged robots: legs only. The torso has no printable part designed yet. Free-shape parts are not estimated.</li>
+</ul>
+<footer>Module: a 250 g servo plus an assumed 40 g battery, 4.41 N·m stall torque, 240° of travel. Coupler strength and servo stiffness are estimates until bench tests.</footer>
+</main>
+</body>
+</html>
