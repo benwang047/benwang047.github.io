@@ -3,7 +3,7 @@ title: "21-DoF robotic hand"
 summary: "Designing, building, and testing an anthropomorphic hand for visual self-modeling."
 role: "Hand design, simulation & motor control"
 date: 2026-07-01
-tags: ["Mechanisms", "Actuation", "URDF / PyBullet"]
+tags: ["Hand Mechanisms", "Actuator Packaging", "Sim-to-Real"]
 featured: true
 ---
 
