@@ -3,7 +3,7 @@ title: "21-DoF robotic hand"
 summary: "Designing, building, and testing an anthropomorphic hand for visual self-modeling."
 role: "Hand design, simulation & motor control"
 date: 2026-07-01
-tags: ["Hand Mechanisms", "Actuator Packaging", "Sim-to-Real"]
+tags: ["Hand Mechanisms", "Visual Self-Modeling", "Keyframe Clustering", "Sim-to-Real"]
 featured: true
 ---
 
@@ -25,7 +25,9 @@ I built corresponding URDF/PyBullet models, calibrating the joint limits, collis
 
 Motor communication became a bottleneck as the number of actuators increased. I tested joint groups separately, traced the issue to the serial bus, and switched to batched commands to improve high-DoF operation. I also worked on connecting the physical hand to the visual inference pipeline and analyzing pose-space coverage.
 
-The project combines mechanical design, control, simulation, and learned visual self-modeling. My contribution centered on the hardware, sim-to-real setup, motor control, and physical testing; the learned model was a team research effort.
+For expressive motion, I also developed a keyframe-selection pipeline for video demonstrations. It used silhouette features, PCA dimensionality reduction, and agglomerative clustering to select representative frames. These selected frames were then used in the motion-generation workflow. The clustering stage was not a CNN classifier.
+
+The project combines mechanical design, control, simulation, and learned visual self-modeling. My contribution centered on the hardware, keyframe-processing workflow, sim-to-real setup, motor control, and physical testing; the learned visual model was a team research effort.
 
 ## Public links
 
