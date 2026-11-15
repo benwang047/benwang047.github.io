@@ -1,18 +1,26 @@
 ---
 title: "Computational modular robotics"
-summary: "Finding robot configurations that can reach the target and carry the load."
-role: "Graduation research: hardware & computational design"
+summary: "Designing smaller robot modules and finding configurations that work under real load limits."
+role: "Module design, coupler testing & configuration search"
 date: 2026-10-01
-tags: ["Configuration search", "Load analysis", "MuJoCo"]
+tags: ["Mechanical design", "Configuration search", "Load testing"]
 featured: true
 ---
 
-I’m exploring how a shared set of actuated modules and passive links could be assembled into robots for different tasks. This is my graduation research.
+This graduation research asks how one standardized actuator module, paired with different printed links, could form robots for different tasks. I developed the module and coupling hardware alongside the simulation and load-checking workflow. The aim is not just to find a robot that reaches a target, but one whose motors and connections can carry the load.
 
-I design the modules, coupling interfaces, and links, and develop the simulation workflow that searches for useful configurations. The two inform each other: a promising arrangement in simulation has to be something we can actually build.
+## Hardware design
 
-Reachability alone isn’t enough. The search also checks joint limits, task geometry, payload, motor torque, and loads at the couplers. I’m building those checks into the evaluation so an overloaded design doesn’t look like a good answer just because it reaches the target.
+The early actuator module was roughly 110 × 110 × 110 mm and 500–600 g. Through packaging and interface redesign, I reduced it to approximately 68 × 68 × 72 mm and 290 g.
 
-The work is ongoing. The simulation gallery below shows the current arm and walking configurations, along with their limitations and printing estimates. Physical validation is still ahead.
+I designed tool-free magnetic couplers and built prototypes for axial and off-axis load testing. Those tests helped establish practical mechanical limits for the configuration search.
 
-[View the simulation gallery →](/projects/modular-robots/)
+## Configuration search and results
+
+The task-driven search evaluates reachability, joint limits, collision, payload, actuator torque, and loads at the couplers. Across the project, I evaluated approximately 80,000 simulated configurations.
+
+Different workspaces produced different answers. For the open-table pick-and-place task, a four-module arm was a good solution. The CNC-loading setup required a different arrangement with six modules. Its simulated coupler bending load exceeded the tested limit, making the connector—not just reachability—a critical design constraint.
+
+The same module concept was also evaluated in simulated walking configurations. These are simulation results; a complete arm or walker has not yet been validated as an assembled hardware system. Coupler prototypes have been bench-tested separately.
+
+[View the simulation results and GIFs](/projects/modular-robots/)
