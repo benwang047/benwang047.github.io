@@ -41,12 +41,12 @@ footer { margin-top: 40px; color: var(--muted); font-size: 0.9rem; border-top: 1
 <h1>Task-Driven Modular Robot Configuration Under Actuator and Coupling Limits</h1>
 <p class="by">Boyuan Wang · Duke University, Mechanical Engineering and Materials Science</p>
 <p class="lead">Every robot here is built from one kind of servo module. For each task, a search picks how many modules to use and how they connect, and designs the 3D-printed links between them, checking motor torque and the strength of the magnetic couplers that join the parts. For a new task the links are reprinted and the modules kept.</p>
-<p class="key">Grey boxes are the modules, blue parts the printed links. All motion is simulated in MuJoCo; none of these robots has been built yet.</p>
+<p class="key">Grey boxes are the modules, blue parts are printed links. Motion in this gallery is simulated in MuJoCo. Complete robot configurations have not been built and validated; separate magnetic-coupler prototypes have undergone bench testing.</p>
 <h2>Arms</h2>
 <p class="section-intro">The same module type, different printed links for each task.</p>
 <div class="grid">
 <figure><img src="gifs/task_open_table_4mod.gif" alt="Table pick and place, simulated" loading="lazy" width="480"><figcaption><b>Table pick and place</b>4 modules, 394 g of printed links. Reaches each task point with the tool, clear of the table.</figcaption></figure>
-<figure><img src="gifs/E00355_6D_SSTST_L90-90-100-130-160-100.gif" alt="Loading a part into a CNC mill, simulated" loading="lazy" width="480"><figcaption><b>Loading a part into a CNC mill</b>6 modules, 579 g. Reaches in through the door to the vise. Its couplers bend to 1.31 times their proof load, so a stronger coupler or a bench test comes first.</figcaption></figure>
+<figure><img src="gifs/E00355_6D_SSTST_L90-90-100-130-160-100.gif" alt="Loading a part into a CNC mill, simulated" loading="lazy" width="480"><figcaption><b>Loading a part into a CNC mill</b>6 modules, 579 g. Reaches in through the door to the vise in simulation. Predicted coupler bending exceeds the bench-tested limit, so a stronger connection or additional validation is needed.</figcaption></figure>
 <figure><img src="gifs/writing__GRL_h50.gif" alt="Writing GRL, simulated" loading="lazy" width="480"><figcaption><b>Writing GRL</b>5 modules, 484 g. Letters 50 mm tall.</figcaption></figure>
 <figure><img src="gifs/writing__DUKE_h50.gif" alt="Writing DUKE, simulated" loading="lazy" width="480"><figcaption><b>Writing DUKE</b>The same arm and links as GRL: only the path changes.</figcaption></figure>
 </div>
@@ -87,7 +87,7 @@ footer { margin-top: 40px; color: var(--muted); font-size: 0.9rem; border-top: 1
 <li>The printed parts of one actuator module take about 4 h.</li>
 <li>Legged robots: legs only. The torso has no printable part designed yet. Free-shape parts are not estimated.</li>
 </ul>
-<footer>Module: a 250 g servo plus an assumed 40 g battery, 4.41 N·m stall torque, 240° of travel. Coupler strength and servo stiffness are estimates until bench tests.</footer>
+<footer>Module model: a 250 g servo plus an assumed 40 g battery, 4.41 N·m rated stall torque, and 240° of travel. Coupler prototypes have been bench-tested for axial and off-axis loading, but predicted loads in the assembled simulated robots and servo stiffness still require full-system validation.</footer>
 </main>
 </body>
 </html>
