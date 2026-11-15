@@ -3,7 +3,7 @@ title: "Computational modular robotics"
 summary: "Designing smaller robot modules and finding configurations that work under real load limits."
 role: "Module design, coupler testing & configuration search"
 date: 2026-10-01
-tags: ["Mechanical design", "Configuration search", "Load testing"]
+tags: ["Module Design", "Coupler Testing", "Configuration Search"]
 featured: true
 ---
 
