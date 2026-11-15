@@ -3,7 +3,7 @@ title: "Acoustic sensing for automated intubation"
 summary: "Studying what sound can tell us about tube–airway contact."
 role: "Project proposer & multidisciplinary team lead"
 date: 2026-05-01
-tags: ["Test systems", "Mechanical design", "Medical robotics"]
+tags: ["Actuator Testbed", "Fixture Design", "Acoustic Sensing"]
 featured: true
 ---
 
