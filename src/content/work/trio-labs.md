@@ -3,7 +3,7 @@ title: "Precision manufacturing equipment"
 summary: "Designing, building, and troubleshooting manufacturing hardware."
 role: "Mechanical engineering intern"
 date: 2025-08-01
-tags: ["Fixtures", "Commissioning", "IQ / OQ / PQ"]
+tags: ["Equipment Design", "Commissioning", "Validation"]
 featured: true
 ---
 
